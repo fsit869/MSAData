@@ -2,10 +2,7 @@ package com.example.databasetesting.jpa.entities;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -13,11 +10,14 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "student_table") // This names the table
 public class Student {
     @Id
     @GeneratedValue
     private int id;
+
+    @Column(name="fooName") // This names a column away from default
     private String firstName;
-    private String lastName;
+    private String lastName; // By default this will get named last_name
     private int gpa;
 }
