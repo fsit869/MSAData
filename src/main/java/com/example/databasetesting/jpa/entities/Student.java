@@ -14,6 +14,12 @@ public class Student {
     @GeneratedValue
     private int id;
 
+    public Student(String firstName, String lastName, int gpa) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gpa = gpa;
+    }
+
     @Column(name="fooName") // This names a column away from default
     private String firstName;
     private String lastName; // By default this will get named last_name

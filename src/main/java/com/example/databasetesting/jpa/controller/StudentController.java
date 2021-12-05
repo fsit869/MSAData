@@ -4,10 +4,7 @@ import com.example.databasetesting.jpa.dto.StudentRequest;
 import com.example.databasetesting.jpa.entities.Student;
 import com.example.databasetesting.jpa.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,16 @@ public class StudentController {
     @GetMapping("/getAllStudents")
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+    @RequestMapping("/newStudentMeth2" )
+    public Student saveNewStudent(
+            @RequestParam("firstName") String firstName,
+            @RequestParam("lastName") String lastName,
+            @RequestParam("gpa") int gpa
+    ) {
+        Student stu = new Student(firstName, lastName, gpa);
+        return studentRepository.save(stu);
     }
 
     /**
