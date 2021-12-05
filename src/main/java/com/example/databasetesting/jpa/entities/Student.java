@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue
-    private int id;
+    private int stu_id;
 
     @Column(name="fooName") // This names a column away from default
     private String firstName;
