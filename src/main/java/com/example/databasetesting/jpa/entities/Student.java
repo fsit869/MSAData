@@ -18,4 +18,14 @@ public class Student {
     private String firstName;
     private String lastName; // By default this will get named last_name
     private int gpa;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name = "major_id_fk")
+    private Major major;
+
+
+/*
+    Many students can be attributed to one major
+     */
+
 }
