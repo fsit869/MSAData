@@ -31,14 +31,28 @@ public class StudentController {
      * Get is simple just use url
      *
      * For post add body containing this
-     * {
-     *     "student": {
-     *         "firstName": "TWO",
-     *         "lastName": "YESS",
-     *         "gpa": 4
+     * [
+     *     {
+     *         "id": 1,
+     *         "firstName": "rv",
+     *         "lastName": "rew",
+     *         "gpa": 4,
+     *         "products": [
+     *             {
+     *                 "pid": 100,
+     *                 "productName": "ABLE",
+     *                 "qty": 2,
+     *                 "price": 40
+     *             },
+     *             {
+     *                 "pid": 200,
+     *                 "productName": "NOT",
+     *                 "qty": 4,
+     *                 "price": 20
+     *             }
+     *         ]
      *     }
-     * }
-     *
+     * ]
      *
      */
 }
