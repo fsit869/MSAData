@@ -1,5 +1,6 @@
 package com.example.databasetesting.jpa.controller;
 
+import com.example.databasetesting.jpa.dto.StuProResponse;
 import com.example.databasetesting.jpa.dto.StudentRequest;
 import com.example.databasetesting.jpa.entities.Student;
 import com.example.databasetesting.jpa.repository.StudentRepository;
@@ -24,6 +25,12 @@ public class StudentController {
     @GetMapping("/getAllStudents")
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+
+    @GetMapping("/getStuProducts")
+    public List<StuProResponse> getStudentProducts() {
+        return studentRepository.getJoinInformation();
     }
 
     /**
